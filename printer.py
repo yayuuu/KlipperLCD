@@ -549,7 +549,7 @@ class PrinterData:
 		self.bed = data['heater_bed'] #temperature, target
 		self.extruder = data['extruder'] #temperature, target
 		self.fan = data['fan']
-		if 'led %s' % self.LED[0] in data:
+		if self.LED and 'led %s' % self.LED[0] in data:
 			self.led_percentage = int(data['led %s' % self.LED[0]]['color_data'][0][3] * 256)
 		self.toolhead = data['toolhead']
 		Update = False
